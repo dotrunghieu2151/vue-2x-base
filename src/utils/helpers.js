@@ -1,5 +1,3 @@
-import moment from "moment";
-
 export const omit = (obj, ...props) => {
   return props.reduce((accumulate, prop) => {
     /* eslint-disable no-unused-vars */
@@ -53,6 +51,13 @@ export const deepClone = (obj) => {
   }
 
   return temp;
+}
+
+export const arrayToObject = (arr, cb) => {
+  return arr.reduce((acc, current, index) => ({
+    ...acc,
+    ...cb(current, index)
+  }), {});
 }
 
 export const arrayLastEle = arr => {
@@ -150,30 +155,30 @@ export const compareVersion = (v1, v2, options = {}) => {
 }
 
 export const compareDates = (d1, compare, d2, unit = 'milliseconds') => {
-  d1 = moment.isMoment(d1) ? d1 : moment(d1);
-  d2 = moment.isMoment(d2) ? d2 : moment(d2);
-  switch (compare) {
-    case '>':
-      return d1.isAfter(d2, unit);
+  // d1 = moment.isMoment(d1) ? d1 : moment(d1);
+  // d2 = moment.isMoment(d2) ? d2 : moment(d2);
+  // switch (compare) {
+  //   case '>':
+  //     return d1.isAfter(d2, unit);
 
-    case '>=':
-      return d1.isSameOrAfter(d2, unit);
+  //   case '>=':
+  //     return d1.isSameOrAfter(d2, unit);
 
-    case '<=':
-      return d1.isSameOrBefore(d2, unit);
+  //   case '<=':
+  //     return d1.isSameOrBefore(d2, unit);
 
-    case '<':
-      return d1.isBefore(d2, unit);
+  //   case '<':
+  //     return d1.isBefore(d2, unit);
 
-    case '=':
-      return d1.isSame(d2, unit);
+  //   case '=':
+  //     return d1.isSame(d2, unit);
 
-    case '!=':
-      return !d1.isSame(d2, unit);
+  //   case '!=':
+  //     return !d1.isSame(d2, unit);
 
-    default:
-      throw new Error("Unsupported compare operator for dates !");
-  }
+  //   default:
+  //     throw new Error("Unsupported compare operator for dates !");
+  // }
 }
 
 export const isMatchedQueryOperator = (val, queryOperators) => {
