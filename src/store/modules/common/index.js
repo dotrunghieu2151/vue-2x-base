@@ -38,15 +38,14 @@ const mutations = {
   }
 }
 
-const { module, computedNames, names } = BaseModuleBuilder.buildModule({
+const module = BaseModuleBuilder.buildModule({
   state,
   getters,
   actions,
   mutations
 })
 
-export default module
+export default module;
 
-export const commonComputed = computedNames;
-export const commonNames = names;
+export const { commonGetters, commonMutations, commonActions } = BaseModuleBuilder.buildComputedNameMaps('common');
 

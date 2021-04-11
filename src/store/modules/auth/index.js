@@ -41,13 +41,10 @@ const mutations = {
   }
 }
 
-const { module, computedNames, names } = BaseModuleBuilder.buildModule({
+const module = BaseModuleBuilder.buildModule({
   state,
   actions,
   mutations,
   getters
 })
 export default module
-
-export const authComputed = computedNames;
-export const authNames = names;
