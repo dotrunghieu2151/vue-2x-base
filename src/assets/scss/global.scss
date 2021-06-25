@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+img {
+  vertical-align: top;
+}
+
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.grid-center {
+  display:grid;
+  place-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.clickable {
+  cursor: pointer;
+}

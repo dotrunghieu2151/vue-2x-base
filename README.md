@@ -1,24 +1,13 @@
 # vue-todo
 
-## Project setup
+## docker setup
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+cp .env.example .env
+docker-compose up -d --build
+wait for npm run serve to finish (30s - 1 minute)
 ```
 
-### Compiles and minifies for production
+## url
 ```
-npm run build
+http://localhost:8080
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
